@@ -1,3 +1,4 @@
+Forked to compute LPIPS on MUNIT outputs
 
 ## Perceptual Similarity Metric and Dataset [[Project Page]](http://richzhang.github.io/PerceptualSimilarity/)
 
