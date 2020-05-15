@@ -5,11 +5,13 @@ import numpy as np
 from util import util
 
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-parser.add_argument('--use_gpu', action='store_true', help='turn on flag to use GPU')
+parser.add_argument('--use_gpu', default=True, help='turn on flag to use GPU')
 
 # 012_MUNIT_origin_cityscapes_64_cyc
-parser.add_argument('-d', '--dir', type=str, default='/media/tai/6TB/Projects/InfoMUNIT/Models/ver_workshop/012_MUNIT_origin_cityscapes_64_cyc/tests/test_batch/a2b/a2b')
-parser.add_argument('-o', '--out', type=str, default='/media/tai/6TB/Projects/InfoMUNIT/Models/ver_workshop/012_MUNIT_origin_cityscapes_64_cyc/tests/test_batch/a2b/a2b/result_lpips.txt')
+# parser.add_argument('-d', '--dir', type=str, default='/media/tai/6TB/Projects/InfoMUNIT/Models/ver_workshop/012_MUNIT_origin_cityscapes_64_cyc/tests/test_batch/a2b/a2b')
+# parser.add_argument('-o', '--out', type=str, default='/media/tai/6TB/Projects/InfoMUNIT/Models/ver_workshop/012_MUNIT_origin_cityscapes_64_cyc/tests/test_batch/a2b/a2b/result_lpips.txt')
+parser.add_argument('-d', '--dir', type=str, default='/media/tai/6TB/Projects/InfoMUNIT/Models/ver_workshop/012_MUNIT_origin_cityscapes_64_cyc/tests/test_batch/b2a/b2a')
+parser.add_argument('-o', '--out', type=str, default='/media/tai/6TB/Projects/InfoMUNIT/Models/ver_workshop/012_MUNIT_origin_cityscapes_64_cyc/tests/test_batch/b2a/b2a/result_lpips.txt')
 
 opt = parser.parse_args()
 
