@@ -37,6 +37,6 @@ for (ff,file0) in enumerate(files[:-1]):
 
 dist_mean = np.mean(np.array(dists))
 print('Mean: %.3f'%dist_mean)
-f.writelines('Mean: %.3f'%dist_mean)
+f.writelines('Mean: %.3f' % dist_mean)
 
 f.close()
