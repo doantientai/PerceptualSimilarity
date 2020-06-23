@@ -7,16 +7,22 @@ from util import util
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument('--use_gpu', default=True, help='turn on flag to use GPU')
 
-# 012_MUNIT_origin_cityscapes_64_cyc
-# parser.add_argument('-d', '--dir', type=str, default='/media/tai/6TB/Projects/InfoMUNIT/Models/ver_workshop/012_MUNIT_origin_cityscapes_64_cyc/tests/test_batch/a2b/a2b')
-# parser.add_argument('-o', '--out', type=str, default='/media/tai/6TB/Projects/InfoMUNIT/Models/ver_workshop/012_MUNIT_origin_cityscapes_64_cyc/tests/test_batch/a2b/a2b/result_lpips.txt')
-parser.add_argument('-d', '--dir', type=str, default='/media/tai/6TB/Projects/InfoMUNIT/Models/ver_workshop/012_MUNIT_origin_cityscapes_64_cyc/tests/test_batch/b2a/b2a')
-parser.add_argument('-o', '--out', type=str, default='/media/tai/6TB/Projects/InfoMUNIT/Models/ver_workshop/012_MUNIT_origin_cityscapes_64_cyc/tests/test_batch/b2a/b2a/result_lpips.txt')
+# # 012_MUNIT_origin_cityscapes_64_cyc
+# # parser.add_argument('-d', '--dir', type=str, default='/media/tai/6TB/Projects/InfoMUNIT/Models/ver_workshop/012_MUNIT_origin_cityscapes_64_cyc/tests/test_batch/a2b/a2b')
+# # parser.add_argument('-o', '--out', type=str, default='/media/tai/6TB/Projects/InfoMUNIT/Models/ver_workshop/012_MUNIT_origin_cityscapes_64_cyc/tests/test_batch/a2b/a2b/result_lpips.txt')
+# parser.add_argument('-d', '--dir', type=str, default='/media/tai/6TB/Projects/InfoMUNIT/Models/ver_workshop/012_MUNIT_origin_cityscapes_64_cyc/tests/test_batch/b2a/b2a')
+# parser.add_argument('-o', '--out', type=str, default='/media/tai/6TB/Projects/InfoMUNIT/Models/ver_workshop/012_MUNIT_origin_cityscapes_64_cyc/tests/test_batch/b2a/b2a/result_lpips.txt')
+
+# 015_cityscapes_64_cyc
+parser.add_argument('-d', '--dir', type=str, default='/media/tai/6TB/Projects/InfoMUNIT/Models/ver_workshop/015_cityscapes_64_cyc/tests/test_batch/a2b/a2b')
+parser.add_argument('-o', '--out', type=str, default='/media/tai/6TB/Projects/InfoMUNIT/Models/ver_workshop/015_cityscapes_64_cyc/tests/test_batch/a2b/a2b/result_lpips.txt')
+# parser.add_argument('-d', '--dir', type=str, default='/media/tai/6TB/Projects/InfoMUNIT/Models/ver_workshop/015_cityscapes_64_cyc/tests/test_batch/b2a/b2a')
+# parser.add_argument('-o', '--out', type=str, default='/media/tai/6TB/Projects/InfoMUNIT/Models/ver_workshop/015_cityscapes_64_cyc/tests/test_batch/b2a/b2a/result_lpips.txt')
 
 opt = parser.parse_args()
 
 ## Initializing the model
-model = models.PerceptualLoss(model='net-lin',net='alex',use_gpu=opt.use_gpu)
+model = models.PerceptualLoss(model='net-lin', net='alex', use_gpu=opt.use_gpu)
 
 # crawl directories
 f = open(opt.out,'w')
@@ -51,12 +57,12 @@ for file_name in file_names:
 
 	dist_mean = np.mean(np.array(dists))
 	print('Mean of %s: %.3f' % (file_name, dist_mean))
-	f.writelines('Mean of %s: %.3f' % (file_name, dist_mean))
+	f.write('Mean of %s: %.3f\n' % (file_name, dist_mean))
 
 	dist_all_files.append(dist_mean)
 
 dist_mean_all = np.mean(np.array(dist_all_files))
-print('Mean of all: %.3f' % dist_mean)
-f.writelines('Mean of all: %.3f' % dist_mean)
+print('Mean of all: %.3f' % dist_mean_all)
+f.write('Mean of all: %.3f\n' % dist_mean_all)
 
 f.close()
