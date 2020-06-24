@@ -7,8 +7,12 @@ from util import util
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 # parser.add_argument('-d', '--dir', type=str, default='/media/tai/6TB/Projects/SOTAsDemos/DRIT/DRIT/outputs/001_portrait/a2b')
 # parser.add_argument('-o', '--out', type=str, default='/media/tai/6TB/Projects/SOTAsDemos/DRIT/DRIT/outputs/001_portrait/a2b/result_lpips.txt')
-parser.add_argument('-d', '--dir', type=str, default='/media/tai/6TB/Projects/SOTAsDemos/DRIT/DRIT/outputs/001_portrait/b2a')
-parser.add_argument('-o', '--out', type=str, default='/media/tai/6TB/Projects/SOTAsDemos/DRIT/DRIT/outputs/001_portrait/b2a/result_lpips.txt')
+# parser.add_argument('-d', '--dir', type=str, default='/media/tai/6TB/Projects/SOTAsDemos/DRIT/DRIT/outputs/001_portrait/b2a')
+# parser.add_argument('-o', '--out', type=str, default='/media/tai/6TB/Projects/SOTAsDemos/DRIT/DRIT/outputs/001_portrait/b2a/result_lpips.txt')
+# parser.add_argument('-d', '--dir', type=str, default='/media/tai/6TB/Projects/SOTAsDemos/DRIT/DRIT/outputs/002_edges2handbags/a2b')
+# parser.add_argument('-o', '--out', type=str, default='/media/tai/6TB/Projects/SOTAsDemos/DRIT/DRIT/outputs/002_edges2handbags/a2b/result_lpips.txt')
+parser.add_argument('-d', '--dir', type=str, default='/media/tai/6TB/Projects/SOTAsDemos/DRIT/DRIT/outputs/002_edges2handbags/b2a')
+parser.add_argument('-o', '--out', type=str, default='/media/tai/6TB/Projects/SOTAsDemos/DRIT/DRIT/outputs/002_edges2handbags/b2a/result_lpips.txt')
 
 
 parser.add_argument('--use_gpu', default=True, help='turn on flag to use GPU')
