@@ -40,7 +40,6 @@ dependencies:
   - jpeg=9c=h14c3975_1001
   - kiwisolver=1.2.0=py36hdb11119_0
   - lame=3.100=h14c3975_1001
-  - ld_impl_linux-64=2.34=h53a641e_0
   - libblas=3.8.0=15_mkl
   - libcblas=3.8.0=15_mkl
   - libclang=9.0.1=default_hde54327_0
